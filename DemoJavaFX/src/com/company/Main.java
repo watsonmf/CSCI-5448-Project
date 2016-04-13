@@ -36,6 +36,7 @@ public class Main extends Application
         Button cancelButton = new Button("Cancel");
         Button saveButton = new Button("Create Account");
         Button logOutButton = new Button("Log Out");
+        Button prefButton = new Button("Preferences"); //Amber
         Button exitButton = new Button("Exit");
         /*Practice for creating a separate window*/
         Button helpButton = new Button("Help");
@@ -91,6 +92,12 @@ public class Main extends Application
             boolean answer = Confirmation.display("Tenjin - Quit", "Are you sure you want to quit?");
             if(answer)
                 window.close();
+        });
+        prefButton.setOnAction(e ->
+        {
+            boolean answer = Preferences.display("Tenjin - Preferences", "Select your background color."); //Amber
+            if(answer)
+                System.out.println("We need to save their preferences at this point");
         });
 
         /*Practice for creating a separate window*/
@@ -159,7 +166,7 @@ public class Main extends Application
         BorderPane homePageBorderPane = new BorderPane();
 
         HBox homePageLayout = new HBox(40);
-        homePageLayout.getChildren().addAll(logOutButton,helpButton);
+        homePageLayout.getChildren().addAll(logOutButton,helpButton, prefButton); //amber
         homePageLayout.setAlignment(Pos.CENTER);
 
         homePageBorderPane.setBottom(homePageLayout);
