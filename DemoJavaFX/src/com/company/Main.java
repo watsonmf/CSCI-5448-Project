@@ -1,7 +1,5 @@
 package com.company;
 import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -40,6 +38,10 @@ public class Main extends Application
         Button logOutButton = new Button("Log Out");
         Button prefButton = new Button("Preferences"); //Amber
         Button exitButton = new Button("Exit");
+        Button viewProgressButton = new Button("View Progress");
+        Button startLessonButton = new Button("Start Lesson");
+        Button resumeLessonButton = new Button("Resume Lesson");
+
         /*Practice for creating a separate window*/
         Button helpButton = new Button("Help");
 
@@ -167,11 +169,19 @@ public class Main extends Application
         /*creating the layout and look of the Home Page*/
         BorderPane homePageBorderPane = new BorderPane();
 
-        HBox homePageLayout = new HBox(40);
+        VBox homePageLayout = new VBox(40);
         homePageLayout.getChildren().addAll(logOutButton,helpButton, prefButton); //amber
         homePageLayout.setAlignment(Pos.CENTER);
 
-        homePageBorderPane.setBottom(homePageLayout);
+        homePageBorderPane.setRight(homePageLayout);
+
+        HBox homePageBottomLayout = new HBox(15);
+        homePageBottomLayout.getChildren().addAll(viewProgressButton,startLessonButton, resumeLessonButton); //amber
+        homePageBottomLayout.setAlignment(Pos.CENTER);
+        homePageBorderPane.setBottom(homePageBottomLayout);
+
+        HBox homePageBox = new HBox();
+        homePageBox.getStyleClass().add("extraHomeBox");
 
         homePageBorderPane.setPadding(new Insets(10,10,45,10));
         homePage = new Scene(homePageBorderPane, 800, 600);
