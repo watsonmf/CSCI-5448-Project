@@ -6,7 +6,14 @@ public abstract class Question
 	protected String longQuestion;
 	protected String helpQuestion;
 	
-	public abstract boolean checkAnswer(String answer);
+	protected String studentAnswer;
+
+	public abstract boolean checkAnswer();
+	
+	public void storeAnswer(String studentAnswer)
+	{
+		this.studentAnswer = studentAnswer;
+	}
 
 	/**
 	 * @return the shortQuestion
@@ -40,5 +47,19 @@ public abstract class Question
 		this.longQuestion = longQuestion;
 	}
 	
+	/**
+	 * @return the helpQuestion
+	 */
+	public String getHelpQuestion()
+	{
+		return helpQuestion;
+	}
 
+	/**
+	 * @param helpQuestion the helpQuestion to set
+	 */
+	public void setHelpQuestion(String helpQuestion)
+	{
+		this.helpQuestion = helpQuestion;
+	}
 }

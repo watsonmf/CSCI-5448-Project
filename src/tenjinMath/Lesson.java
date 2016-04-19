@@ -11,6 +11,11 @@ public class Lesson
 		this.numberOfQuestions = numberOfQuestions;
 	}
 	
+	public int getNumberOfQuestions()
+	{
+		return numberOfQuestions;
+	}
+	
 	public Question getQuestion(int questionNumber)
 	{
 		if (questionNumber > numberOfQuestions)
@@ -26,7 +31,7 @@ public class Lesson
 		
 		for (int i = 0; i < numberOfQuestions; i++)
 		{
-			results[i] = /* CHANGE TO QUESTION GRADING*/ false;
+			results[i] = questions[i].checkAnswer();
 		}
 		
 		return results;
