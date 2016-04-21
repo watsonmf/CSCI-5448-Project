@@ -26,11 +26,18 @@ import tenjinMath.Student;
 import tenjinMath.Tenjin;
 import tenjinMath.User;
 
-public class Main extends Application
+public class Main extends Application implements EventHandler<ActionEvent>
 {
     Stage window;
     Scene loginPage, homePage,createAccountPage, additionLessonPage;
     int index = 0;
+    Button startLessonButton = new Button("Start Lesson");
+    Button quitButton = new Button("Quit");
+    Button nextButton = new Button("Next");
+    Button prevButton = new Button("Prev");
+    Button submitButton = new Button("Submit");
+    Button helpButton = new Button("Help");
+    ListView modulesOptions = new ListView();
     
  	private static final String configFileName = "Tenjin.config";
  	private static Properties tenjinProperties;
@@ -178,7 +185,6 @@ public class Main extends Application
         Button logOutButton = new Button("Log Out");
         Button prefButton = new Button("Preferences"); //Amber
         Button viewProgressButton = new Button("View Progress");
-        Button startLessonButton = new Button("Start Lesson");
         Button resumeLessonButton = new Button("Resume Lesson");
 
         /*if (!something is lesson in progress)*/
@@ -206,7 +212,6 @@ public class Main extends Application
         homePageBorderPane.setTop(homeLayout);
         
         /*Creating the Drop Down Menu for selecting a Module*/
-        ListView modulesOptions = new ListView();
         modulesOptions.getItems().addAll("Addition", "Subtraction", "Multiplication","Division");
         modulesOptions.setMinSize(130,190);
         modulesOptions.setMaxSize(130,190);
@@ -230,68 +235,7 @@ public class Main extends Application
         *
         */
         /*Creating the Lesson Page*/
-        Button quitButton = new Button("Quit");
-        Button nextButton = new Button("Next");
-        Button prevButton = new Button("Prev");
-        Button submitButton = new Button("Submit");
-        Button helpButton = new Button("Help");
 
-        Label questionListLabel = new Label(currentLesson.getLessonTitle());
-        questionListLabel.setStyle("-fx-text-fill: #e8e8e8");
-        ListView<String> questionList = new ListView<>();
-        for (int i = 0; i < currentLesson.getNumberOfQuestions(); i++)
-        {
-      	  questionList.getItems().add(currentLesson.getQuestion(i).getShortQuestion());
-        }
-        //questionList.getItems().addAll("1 + 1 =", "1 + 2 =", "1 + 3 =");
-        //This is where we load all the question strings into the ListView
-
-        VBox questionLayout = new VBox();
-        questionLayout.getChildren().addAll(questionListLabel,questionList);
-        questionLayout.setAlignment(Pos.TOP_LEFT);
-        questionLayout.setPadding(new Insets(60, 20, 20, 20));
-
-        HBox progressButtonLayout = new HBox(45);
-        progressButtonLayout.getChildren().addAll(prevButton, nextButton, submitButton);
-        progressButtonLayout.setAlignment(Pos.BASELINE_CENTER);
-        progressButtonLayout.setPadding(new Insets(20, 20, 20, 20));
-
-        HBox quitHelpButtonLayout = new HBox(45);
-        quitHelpButtonLayout.getChildren().addAll(helpButton, quitButton);
-        quitHelpButtonLayout.setAlignment(Pos.TOP_RIGHT);
-        quitHelpButtonLayout.setPadding(new Insets(80, 45, 45, 45));
-
-        Label answerLabel = new Label("Insert your answer");
-        answerLabel.setStyle("-fx-text-fill: #e8e8e8");
-        TextField answerInput = new TextField();
-
-        TextArea questionDisplay = new TextArea();
-        questionDisplay.setEditable(false);
-        questionDisplay.setMinSize(200,300);
-        questionDisplay.setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
-        questionDisplay.setStyle(""
-                + "-fx-font-size: 50px;"
-                + "-fx-font-style: italic;"
-                + "-fx-font-weight: bold;"
-                + "-fx-font-family: fantasy;");
-        String[] question = questionList.getItems().get(index).split("\\s+");
-        Text formatQuestion = new Text(question[0]+"\n"+question[1]+" "+question[2]+"\n"+"----------\n");
-        formatQuestion.setTextAlignment(TextAlignment.CENTER);
-        questionDisplay.setText(formatQuestion.getText());
-
-        VBox questionDisplayLayout = new VBox(15);
-        questionDisplayLayout.getChildren().addAll(questionDisplay, answerLabel, answerInput);
-        questionDisplayLayout.setPadding(new Insets(80,0,0,0));
-        questionDisplayLayout.setAlignment(Pos.CENTER);
-
-        BorderPane additionLessonBorderPane = new BorderPane();
-        additionLessonBorderPane.setLeft(questionLayout);
-        additionLessonBorderPane.setBottom(progressButtonLayout);
-        additionLessonBorderPane.setRight(quitHelpButtonLayout);
-        additionLessonBorderPane.setCenter(questionDisplayLayout);
-        
-        additionLessonPage = new Scene(additionLessonBorderPane, 800, 600);
-        additionLessonBorderPane.getStylesheets().add("Style.css");
 
         /*
         * SET ACTION ON BUTTONS
@@ -350,20 +294,7 @@ public class Main extends Application
             if(answer)
                 System.out.println("We need to save their preferences at this point");
         });
-        startLessonButton.setOnAction(e ->
-        {
-      	  currentModule = ModuleFactory.getModule(modulesOptions.getSelectionModel().getSelectedItem().toString() , currentUser);
-      	  
-      	  //modulesOptions.getSelectionModel().getSelectedItem().
-            if(currentModule != null)
-            {
-            	currentLesson = currentModule.getLesson();
-                window.setTitle("Tenjin - " + currentLesson.getLessonTitle());
-                window.setScene(additionLessonPage);
-            }
-            else
-                System.out.println("Wait for the update patch for extended usability");
-        });
+        startLessonButton.setOnAction(this);
 
         /*Lesson page buttons*/
         helpButton.setOnAction(e -> Help.display("Tenjin - Help", "Yes, you do need a lot of help"));
@@ -396,6 +327,81 @@ public class Main extends Application
             window.close();
         }
     }
+    @Override
+    public void handle(ActionEvent event)
+    {
+        if(event.getSource() == startLessonButton)
+        {
+            currentModule = ModuleFactory.getModule(modulesOptions.getSelectionModel().getSelectedItem().toString() , currentUser);
 
+            //modulesOptions.getSelectionModel().getSelectedItem().
+            if(currentModule != null)
+            {
+                currentLesson = currentModule.getLesson();
+                window.setTitle("Tenjin - " + currentLesson.getLessonTitle());
+
+                Label questionListLabel = new Label(currentLesson.getLessonTitle());
+                questionListLabel.setStyle("-fx-text-fill: #e8e8e8");
+                ListView<String> questionList = new ListView<>();
+                for (int i = 0; i < currentLesson.getNumberOfQuestions(); i++)
+                {
+                    questionList.getItems().add(currentLesson.getQuestion(i).getShortQuestion());
+                }
+                //questionList.getItems().addAll("1 + 1 =", "1 + 2 =", "1 + 3 =");
+                //This is where we load all the question strings into the ListView
+
+                VBox questionLayout = new VBox();
+                questionLayout.getChildren().addAll(questionListLabel,questionList);
+                questionLayout.setAlignment(Pos.TOP_LEFT);
+                questionLayout.setPadding(new Insets(60, 20, 20, 20));
+
+                HBox progressButtonLayout = new HBox(45);
+                progressButtonLayout.getChildren().addAll(prevButton, nextButton, submitButton);
+                progressButtonLayout.setAlignment(Pos.BASELINE_CENTER);
+                progressButtonLayout.setPadding(new Insets(20, 20, 20, 20));
+
+                HBox quitHelpButtonLayout = new HBox(45);
+                quitHelpButtonLayout.getChildren().addAll(helpButton, quitButton);
+                quitHelpButtonLayout.setAlignment(Pos.TOP_RIGHT);
+                quitHelpButtonLayout.setPadding(new Insets(80, 45, 45, 45));
+
+                Label answerLabel = new Label("Insert your answer");
+                answerLabel.setStyle("-fx-text-fill: #e8e8e8");
+                TextField answerInput = new TextField();
+
+                TextArea questionDisplay = new TextArea();
+                questionDisplay.setEditable(false);
+                questionDisplay.setMinSize(200,300);
+                questionDisplay.setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
+                questionDisplay.setStyle(""
+                        + "-fx-font-size: 50px;"
+                        + "-fx-font-style: italic;"
+                        + "-fx-font-weight: bold;"
+                        + "-fx-font-family: fantasy;");
+                String[] question = questionList.getItems().get(index).split("\\s+");
+                Text formatQuestion = new Text(question[0]+"\n"+question[1]+" "+question[2]+"\n"+"----------\n");
+                formatQuestion.setTextAlignment(TextAlignment.CENTER);
+                questionDisplay.setText(formatQuestion.getText());
+
+                VBox questionDisplayLayout = new VBox(15);
+                questionDisplayLayout.getChildren().addAll(questionDisplay, answerLabel, answerInput);
+                questionDisplayLayout.setPadding(new Insets(80,0,0,0));
+                questionDisplayLayout.setAlignment(Pos.CENTER);
+
+                BorderPane additionLessonBorderPane = new BorderPane();
+                additionLessonBorderPane.setLeft(questionLayout);
+                additionLessonBorderPane.setBottom(progressButtonLayout);
+                additionLessonBorderPane.setRight(quitHelpButtonLayout);
+                additionLessonBorderPane.setCenter(questionDisplayLayout);
+
+                additionLessonPage = new Scene(additionLessonBorderPane, 800, 600);
+                additionLessonBorderPane.getStylesheets().add("Style.css");
+                window.setScene(additionLessonPage);
+            }
+            else
+                System.out.println("Wait for the update patch for extended usability");
+
+        }
+    }
 
 }
