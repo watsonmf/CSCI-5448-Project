@@ -3,6 +3,7 @@ package tenjinMath;
 public class Lesson
 {
 	private int numberOfQuestions;
+	private String lessonTitle;
 	private Question[] questions;
 	
 	public Lesson(Question[] questions, int numberOfQuestions)
@@ -35,5 +36,10 @@ public class Lesson
 		}
 		
 		return results;
+	}
+	
+	public String getLessonTitle()
+	{
+		return "test";
 	}
 }

@@ -30,7 +30,7 @@ public class Tenjin
 		currentUser = new Student(userInput);
 		currentUser.setProperty("userName", userInput);
 		
-		currentModule = AdditionModule.getInstance();
+		currentModule = ModuleFactory.getModule("Addition", currentUser);
 		
 		currentLesson = currentModule.getLesson();
 		
@@ -146,6 +146,34 @@ public class Tenjin
 	public void setTenjinProperties(Properties tenjinProperties)
 	{
 		this.tenjinProperties = tenjinProperties;
+	}
+	
+	public static String[] getUserList()
+	{
+		File folder = new File("users");
+		folder.mkdir();
+		
+		File[] fileList = folder.listFiles();
+		int fileCount = fileList.length;
+		
+		String[] list = new String[fileCount];
+		String[] fileNameArray;
+		
+		int j = 0;
+		for (int i = 0; i < fileCount; i++)
+		{
+			fileNameArray = fileList[i].getName().split("\\.");
+			
+			System.out.println(fileNameArray[0] + " " + fileNameArray[1]);
+			
+			if (fileNameArray[1].equalsIgnoreCase("config"))
+			{
+				System.out.println("equals");
+				list[j++] = fileNameArray[0];
+			}
+		}
+		
+		return list;
 	}
 
 }

@@ -1,4 +1,6 @@
 package com.company;
+import java.util.Properties;
+
 import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,13 +19,24 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import tenjinMath.Lesson;
+import tenjinMath.Module;
+import tenjinMath.ModuleFactory;
+import tenjinMath.Student;
+import tenjinMath.Tenjin;
+import tenjinMath.User;
 
 public class Main extends Application
 {
-
     Stage window;
     Scene loginPage, homePage,createAccountPage, additionLessonPage;
     int index = 0;
+    
+ 	private static final String configFileName = "Tenjin.config";
+ 	private static Properties tenjinProperties;
+ 	private static User currentUser;
+ 	private static Module currentModule;
+ 	private static Lesson currentLesson;
 
     public static void main(String[] args)
     {
@@ -52,7 +65,8 @@ public class Main extends Application
         /*Creating the Drop Down Menu for selecting a Login Name*/
         ChoiceBox<String> dropDownMenu = new ChoiceBox<>();
         /*Need to load in all the login names stored in the system*/
-        String[] loginNames = new String[] {"awomack", "eeakins", "mwatkins", "balfano"};
+        String[] loginNames = Tenjin.getUserList();
+        
         for(int i = 0; i < loginNames.length; i++)
         {
             dropDownMenu.getItems().add(loginNames[i]);
@@ -125,6 +139,7 @@ public class Main extends Application
         Label fNameLabel = new Label("First Name");
         fNameLabel.setStyle("-fx-text-fill: #e8e8e8");
         TextField fNameInput = new TextField();
+        
 
         VBox nameInputLayout = new VBox(20);
         nameInputLayout.getChildren().addAll(uNameInput,uNameLabel,fNameInput,fNameLabel);
@@ -136,7 +151,7 @@ public class Main extends Application
 
         createAccountBorderPane.setTop(nameInputLayout);
         createAccountBorderPane.setBottom(createAccountLayout);
-
+        
         HBox gradeLevelLayout = new HBox(15);
         gradeLevelLayout.getChildren().addAll(gradek, grade1, grade2, grade3, grade4, grade5);
         gradeLevelLayout.setAlignment(Pos.CENTER);
@@ -151,7 +166,6 @@ public class Main extends Application
         createAccountBorderPane.setPadding(new Insets(40,10,45,10));
         createAccountPage = new Scene(createAccountBorderPane, 325, 450);
         createAccountPage.getStylesheets().add("Style.css"); /*Amber*/
-
 
 
         /*
@@ -190,7 +204,7 @@ public class Main extends Application
         homeLayout.getChildren().add(homeLabel); //amber
         homeLayout.setAlignment(Pos.CENTER);
         homePageBorderPane.setTop(homeLayout);
-
+        
         /*Creating the Drop Down Menu for selecting a Module*/
         ListView modulesOptions = new ListView();
         modulesOptions.getItems().addAll("Addition", "Subtraction", "Multiplication","Division");
@@ -209,7 +223,6 @@ public class Main extends Application
         homePage.getStylesheets().add("Style.css"); /*Amber*/
 
 
-
         /*
         *
         * LESSON PAGE
@@ -223,10 +236,14 @@ public class Main extends Application
         Button submitButton = new Button("Submit");
         Button helpButton = new Button("Help");
 
-        Label questionListLabel = new Label("Addition - Lesson 1");
+        Label questionListLabel = new Label(currentLesson.getLessonTitle());
         questionListLabel.setStyle("-fx-text-fill: #e8e8e8");
         ListView<String> questionList = new ListView<>();
-        questionList.getItems().addAll("1 + 1 =", "1 + 2 =", "1 + 3 =");
+        for (int i = 0; i < currentLesson.getNumberOfQuestions(); i++)
+        {
+      	  questionList.getItems().add(currentLesson.getQuestion(i).getShortQuestion());
+        }
+        //questionList.getItems().addAll("1 + 1 =", "1 + 2 =", "1 + 3 =");
         //This is where we load all the question strings into the ListView
 
         VBox questionLayout = new VBox();
@@ -272,14 +289,11 @@ public class Main extends Application
         additionLessonBorderPane.setBottom(progressButtonLayout);
         additionLessonBorderPane.setRight(quitHelpButtonLayout);
         additionLessonBorderPane.setCenter(questionDisplayLayout);
-
+        
         additionLessonPage = new Scene(additionLessonBorderPane, 800, 600);
         additionLessonBorderPane.getStylesheets().add("Style.css");
 
-
-
         /*
-        *
         * SET ACTION ON BUTTONS
         *
         *
@@ -287,6 +301,8 @@ public class Main extends Application
         /*Set actions for when the buttons are pressed at Login*/
         loginButton.setOnAction(e ->
         {
+      	  	currentUser = new Student(dropDownMenu.getValue());
+      	  	
             window.setTitle("Tenjin - Home Page");
             window.setScene(homePage);
         });
@@ -298,7 +314,7 @@ public class Main extends Application
         exitButton.setOnAction(e ->
         {
             boolean answer = Confirmation.display("Tenjin - Quit", "Are you sure you want to quit?");
-            if(answer)
+            if (answer)
                 window.close();
         });
 
@@ -311,9 +327,15 @@ public class Main extends Application
         saveButton.setOnAction(e ->
         {
             /*Save profile, create profile object with information*/
+      	  currentUser = new Student(uNameInput.getText());
+      	  currentUser.setProperty("userName", uNameInput.getText());
+      	  currentUser.setProperty("firstName", fNameInput.getText());
+      	  
+      	  RadioButton rb = (RadioButton)gradeLevel.getSelectedToggle();
+      	  
+      	  currentUser.setProperty("gradeLevel", rb.getText());
             window.setTitle("Tenjin - Home Page");
             window.setScene(homePage);
-
         });
 
         /*Home Page buttons*/
@@ -330,9 +352,13 @@ public class Main extends Application
         });
         startLessonButton.setOnAction(e ->
         {
-            if(modulesOptions.getSelectionModel().getSelectedItem() == "Addition")
+      	  currentModule = ModuleFactory.getModule(modulesOptions.getSelectionModel().getSelectedItem().toString() , currentUser);
+      	  
+      	  //modulesOptions.getSelectionModel().getSelectedItem().
+            if(currentModule != null)
             {
-                window.setTitle("Tenjin - Addition Lesson 1");
+            	currentLesson = currentModule.getLesson();
+                window.setTitle("Tenjin - " + currentLesson.getLessonTitle());
                 window.setScene(additionLessonPage);
             }
             else
@@ -350,9 +376,6 @@ public class Main extends Application
             }
 
         });
-
-
-
 
         /*Initial scene*/
         window.setScene(loginPage);
