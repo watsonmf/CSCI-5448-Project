@@ -26,15 +26,20 @@ public class AdditionQuestion extends tenjinMath.Question
 		}
 		
 		super.shortQuestion += " = ";
-		super.longQuestion += "-------\n";
+		super.longQuestion += "--------\n";
 	}
 	
 	@Override
 	public boolean checkAnswer()
 	{
-		// TODO Auto-generated method stub
-		
-		int studentAnswerInteger = Integer.parseInt(studentAnswer);
+		int studentAnswerInteger;
+		try
+		{
+			studentAnswerInteger = Integer.parseInt(studentAnswer);
+		} catch (NumberFormatException e)
+		{
+			return false;
+		}
 		
 		for (int i = 0; i < possibleAnswers.length; i++ )
 		{
@@ -46,5 +51,17 @@ public class AdditionQuestion extends tenjinMath.Question
 		
 		return false;
 	}
+/*
+	@Override
+	protected boolean checkAnswerFormat(String studentAnswer)
+	{
+		try
+		{
+			Integer.parseInt(studentAnswer);
+		} catch ()
+		
+		// TODO Auto-generated method stub
+		return false;
+	}*/
 
 }

@@ -9,10 +9,14 @@ public abstract class Question
 	protected String studentAnswer;
 
 	public abstract boolean checkAnswer();
+	//protected abstract boolean checkAnswerFormat(String studentAnswer);
 	
 	public void storeAnswer(String studentAnswer)
 	{
-		this.studentAnswer = studentAnswer;
+		//if (checkAnswerFormat(studentAnswer) == true)
+		//{
+			this.studentAnswer = studentAnswer;
+		//}
 	}
 
 	/**
@@ -20,7 +24,7 @@ public abstract class Question
 	 */
 	public String getShortQuestion()
 	{
-		return shortQuestion;
+		return (studentAnswer == null ? shortQuestion : shortQuestion + studentAnswer);
 	}
 
 	/**

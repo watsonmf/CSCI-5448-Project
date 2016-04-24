@@ -16,6 +16,7 @@ public class AdditionModule implements tenjinMath.Module
 			"Add number <= 5 with 3", "Add number <= 10 with 3"};
 	private static User currentUser;
 	int progress[];
+	private AdditionStrategy strategy;
 	
 	
 	private AdditionModule(User user)
@@ -64,7 +65,7 @@ public class AdditionModule implements tenjinMath.Module
 		
 		for (int i = 0; i < numberOfQuestions; i++)
 		{
-			questionArray[i] = generateAdditionQuestion();
+			questionArray[i] = generateAdditionQuestion(i);
 		}
 		
 		Lesson newLesson = new Lesson(questionArray, numberOfQuestions);
@@ -93,12 +94,12 @@ public class AdditionModule implements tenjinMath.Module
 		System.out.println("AdditionModule: Updating Progress...");
 	}
 	
-	private Question generateAdditionQuestion()
+	private Question generateAdditionQuestion(int i)
 	{
 		/* PLACEHOLDER: GENERATES 1 + 1 = 2 */
-		int[] operators = {1,1};
+		int[] operators = {i,1};
 		char[] operands = {'+'};
-		int[] possibleAnswers = {2};
+		int[] possibleAnswers = {operators[0] + operators[1]};
 		
 		return new AdditionQuestion(operators, operands, possibleAnswers);
 	}
