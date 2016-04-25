@@ -13,7 +13,6 @@ public class ModuleFactory
 			case "Subtraction":
 				return AdditionModule.getInstance(currentUser);
 				
-				
 		}
 		
 		

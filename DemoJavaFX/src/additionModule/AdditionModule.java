@@ -44,6 +44,32 @@ public class AdditionModule implements tenjinMath.Module
 				progress[i] = (int)moduleProperties.charAt(i);
 			}
 		}
+		
+		System.out.println(currentUser.getProperty("gradeLevel"));
+		
+		switch (currentUser.getProperty("gradeLevel"))
+		{
+		case "K":
+			strategy = new AdditionStrategyGradeK(progress);
+			break;
+		case "1":
+			strategy = new AdditionStrategyGrade1(progress);
+			break;
+		case "2":
+			strategy = new AdditionStrategyGrade2(progress);
+			break;
+		case "3":
+			strategy = new AdditionStrategyGrade3(progress);
+			break;
+		case "4":
+			strategy = new AdditionStrategyGrade4(progress);
+			break;
+		case "5":
+			strategy = new AdditionStrategyGrade5(progress);
+			break;
+		default:
+			strategy = null;
+		}
 	}
 	
 
@@ -60,17 +86,7 @@ public class AdditionModule implements tenjinMath.Module
 	@Override
 	public Lesson getLesson()
 	{
-		int numberOfQuestions = 10;
-		Question[] questionArray = new Question[numberOfQuestions];
-		
-		for (int i = 0; i < numberOfQuestions; i++)
-		{
-			questionArray[i] = generateAdditionQuestion(i);
-		}
-		
-		Lesson newLesson = new Lesson(questionArray, numberOfQuestions);
-		
-		return newLesson;
+		return strategy.generateLesson();
 	}
 
 	@Override

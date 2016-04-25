@@ -48,7 +48,7 @@ public abstract class User
 		} catch (IOException e)
 		{
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 	

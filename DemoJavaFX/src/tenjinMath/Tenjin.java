@@ -1,6 +1,7 @@
 package tenjinMath;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -102,6 +103,15 @@ public class Tenjin
 		File file = new File(fileDir + File.separatorChar + fileName);
 				
 		Properties props = new Properties();
+		
+		try
+		{
+			props.load(new FileInputStream(file));
+		} catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		return props;
 	}
