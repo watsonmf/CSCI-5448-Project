@@ -1,59 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aeac648c-e816-4590-bb47-caacdac962ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/project-template.xml" afterPath="$PROJECT_DIR$/.idea/project-template.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DemoJavaFX.iml" afterPath="$PROJECT_DIR$/DemoJavaFX.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DemoJavaFX/Style.css" afterPath="$PROJECT_DIR$/out/production/DemoJavaFX/Style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Style.css" afterPath="$PROJECT_DIR$/src/Style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/additionModule/AdditionModule.java" afterPath="$PROJECT_DIR$/src/additionModule/AdditionModule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/additionModule/AdditionQuestion.java" afterPath="$PROJECT_DIR$/src/additionModule/AdditionQuestion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Confirmation.java" afterPath="$PROJECT_DIR$/src/com/company/Confirmation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Help.java" afterPath="$PROJECT_DIR$/src/com/company/Help.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Main.java" afterPath="$PROJECT_DIR$/src/com/company/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Preferences.java" afterPath="$PROJECT_DIR$/src/com/company/Preferences.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tenjinMath/Lesson.java" afterPath="$PROJECT_DIR$/src/tenjinMath/Lesson.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tenjinMath/Module.java" afterPath="$PROJECT_DIR$/src/tenjinMath/Module.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tenjinMath/ModuleFactory.java" afterPath="$PROJECT_DIR$/src/tenjinMath/ModuleFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tenjinMath/ModuleLoader.java" afterPath="$PROJECT_DIR$/src/tenjinMath/ModuleLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tenjinMath/Question.java" afterPath="$PROJECT_DIR$/src/tenjinMath/Question.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tenjinMath/Student.java" afterPath="$PROJECT_DIR$/src/tenjinMath/Student.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tenjinMath/Tenjin.java" afterPath="$PROJECT_DIR$/src/tenjinMath/Tenjin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tenjinMath/User.java" afterPath="$PROJECT_DIR$/src/tenjinMath/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IntelliLang.xml" afterPath="$PROJECT_DIR$/../IntelliLang.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LICENSE.md" afterPath="$PROJECT_DIR$/../LICENSE.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../README.md" afterPath="$PROJECT_DIR$/../README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../_windows/git.xml" afterPath="$PROJECT_DIR$/../_windows/git.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../_windows/keymap.xml" afterPath="$PROJECT_DIR$/../_windows/keymap.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../_windows/laf.xml" afterPath="$PROJECT_DIR$/../_windows/laf.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../_windows/path.macros.xml" afterPath="$PROJECT_DIR$/../_windows/path.macros.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../colors.scheme.xml" afterPath="$PROJECT_DIR$/../colors.scheme.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../debugger.xml" afterPath="$PROJECT_DIR$/../debugger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../diff.xml" afterPath="$PROJECT_DIR$/../diff.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../git.exe.stackdump" afterPath="$PROJECT_DIR$/../git.exe.stackdump" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../gradle.run.settings.xml" afterPath="$PROJECT_DIR$/../gradle.run.settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../inspection/Default.xml" afterPath="$PROJECT_DIR$/../inspection/Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mavenVersion.xml" afterPath="$PROJECT_DIR$/../mavenVersion.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../other.xml" afterPath="$PROJECT_DIR$/../other.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/additionModule/AdditionModule.java" afterPath="$PROJECT_DIR$/../src/additionModule/AdditionModule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/additionModule/AdditionQuestion.java" afterPath="$PROJECT_DIR$/../src/additionModule/AdditionQuestion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/tenjinMath/Lesson.java" afterPath="$PROJECT_DIR$/../src/tenjinMath/Lesson.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/tenjinMath/Module.java" afterPath="$PROJECT_DIR$/../src/tenjinMath/Module.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/tenjinMath/ModuleLoader.java" afterPath="$PROJECT_DIR$/../src/tenjinMath/ModuleLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/tenjinMath/Question.java" afterPath="$PROJECT_DIR$/../src/tenjinMath/Question.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/tenjinMath/Student.java" afterPath="$PROJECT_DIR$/../src/tenjinMath/Student.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/tenjinMath/Tenjin.java" afterPath="$PROJECT_DIR$/../src/tenjinMath/Tenjin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/tenjinMath/User.java" afterPath="$PROJECT_DIR$/../src/tenjinMath/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ui.lnf.xml" afterPath="$PROJECT_DIR$/../ui.lnf.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../web-browsers.xml" afterPath="$PROJECT_DIR$/../web-browsers.xml" />
-    </list>
+    <list default="true" id="aeac648c-e816-4590-bb47-caacdac962ac" name="Default" comment="" />
     <ignored path="DemoJavaFX.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -77,8 +25,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4771">
-              <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+            <state relative-caret-position="315">
+              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -87,7 +35,7 @@
       <file leaf-file-name="Preferences.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Preferences.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1105">
+            <state relative-caret-position="975">
               <caret line="79" column="22" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
               <folding />
             </state>
@@ -97,7 +45,7 @@
       <file leaf-file-name="Confirmation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Confirmation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="165">
               <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="58" />
               <folding />
             </state>
@@ -107,7 +55,7 @@
       <file leaf-file-name="Help.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Help.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="90">
               <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
               <folding />
             </state>
@@ -117,7 +65,7 @@
       <file leaf-file-name="Style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="150">
               <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
               <folding />
             </state>
@@ -163,8 +111,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="697" />
+    <option name="y" value="23" />
+    <option name="width" value="883" />
     <option name="height" value="745" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -482,16 +430,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="697" height="745" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="883" height="745" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32671756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17304747" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -500,15 +450,13 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32763976" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17546584" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -559,6 +507,30 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Help.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Preferences.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="79" column="22" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -891,7 +863,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/CreateAccount.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Confirmation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="165">
           <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="58" />
           <folding />
         </state>
@@ -899,7 +871,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="150">
           <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
           <folding />
         </state>
@@ -907,7 +879,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Help.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="90">
           <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding />
         </state>
@@ -915,7 +887,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Preferences.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
+        <state relative-caret-position="975">
           <caret line="79" column="22" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
           <folding />
         </state>
@@ -923,8 +895,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4771">
-          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+        <state relative-caret-position="315">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding />
         </state>
       </provider>
