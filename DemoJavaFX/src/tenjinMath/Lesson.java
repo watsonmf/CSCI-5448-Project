@@ -40,6 +40,6 @@ public class Lesson
 	
 	public String getLessonTitle()
 	{
-		return "test";
+		return "Grade K - Lesson 1";
 	}
 }
