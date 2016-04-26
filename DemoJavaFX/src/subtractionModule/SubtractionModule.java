@@ -1,11 +1,11 @@
-package additionModule;
+package subtractionModule;
 
 import tenjinMath.Lesson;
 import tenjinMath.Module;
 import tenjinMath.Question;
 import tenjinMath.User;
 
-public class AdditionModule implements tenjinMath.Module
+public class SubtractionModule implements tenjinMath.Module
 {
 	private static Module instance;
 	private static String moduleID = "addition";
@@ -16,10 +16,10 @@ public class AdditionModule implements tenjinMath.Module
 			"Add number <= 5 with 3", "Add number <= 10 with 3"};
 	private static User currentUser;
 	private int progress[];
-	private AdditionStrategy strategy;
+	private SubtractionStrategy strategy;
 	
 	
-	private AdditionModule(User user)
+	private SubtractionModule(User user)
 	{
 		currentUser = user;
 		
@@ -50,22 +50,22 @@ public class AdditionModule implements tenjinMath.Module
 		switch (currentUser.getProperty("gradeLevel"))
 		{
 		case "K":
-			strategy = new AdditionStrategyGradeK(progress);
+			strategy = new SubtractionStrategyGradeK(progress);
 			break;
 		case "1":
-			strategy = new AdditionStrategyGrade1(progress);
+			strategy = new SubtractionStrategyGrade1(progress);
 			break;
 		case "2":
-			strategy = new AdditionStrategyGrade2(progress);
+			strategy = new SubtractionStrategyGrade2(progress);
 			break;
 		case "3":
-			strategy = new AdditionStrategyGrade3(progress);
+			strategy = new SubtractionStrategyGrade3(progress);
 			break;
 		case "4":
-			strategy = new AdditionStrategyGrade4(progress);
+			strategy = new SubtractionStrategyGrade4(progress);
 			break;
 		case "5":
-			strategy = new AdditionStrategyGrade5(progress);
+			strategy = new SubtractionStrategyGrade5(progress);
 			break;
 		default:
 			strategy = null;
@@ -77,7 +77,7 @@ public class AdditionModule implements tenjinMath.Module
 	{
 		if (instance == null || user.getProperty("userName").compareTo(currentUser.getProperty("userName")) != 0)
 		{
-			instance = new AdditionModule(user);
+			instance = new SubtractionModule(user);
 		}
 		
 		return instance;
@@ -110,13 +110,13 @@ public class AdditionModule implements tenjinMath.Module
 		System.out.println("AdditionModule: Updating Progress...");
 	}
 	
-	private Question generateAdditionQuestion(int i)
+	private Question generateSubtractionQuestion(int i)
 	{
 		/* PLACEHOLDER: GENERATES 1 + 1 = 2 */
 		int[] operators = {i,1};
 		char[] operands = {'+'};
 		int[] possibleAnswers = {operators[0] + operators[1]};
 		
-		return new AdditionQuestion(operators, operands, possibleAnswers);
+		return new SubtractionQuestion(operators, operands, possibleAnswers);
 	}
 }

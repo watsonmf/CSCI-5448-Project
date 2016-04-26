@@ -1,6 +1,7 @@
 package tenjinMath;
 
 import additionModule.AdditionModule;
+import subtractionModule.SubtractionModule;
 
 public class ModuleFactory
 {
@@ -11,7 +12,7 @@ public class ModuleFactory
 			case "Addition":
 				return AdditionModule.getInstance(currentUser);
 			case "Subtraction":
-				return AdditionModule.getInstance(currentUser);
+				return SubtractionModule.getInstance(currentUser);
 				
 		}
 		
